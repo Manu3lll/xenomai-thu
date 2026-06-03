@@ -4,10 +4,6 @@ This archive contains the source code and build files for the updated real-time 
 
 ## Repository Structure
 
-Code output
-
-README.md generated successfully.
-
 ```text
 .
 ├── hello_world/
