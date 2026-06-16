@@ -57,7 +57,7 @@ int main(int argc, char *argv[]) {
         long long diff_ns = (end_time.tv_sec - start_time->tv_sec) * 1000000000LL + 
                             (end_time.tv_nsec - start_time->tv_nsec);
         
-        evl_printf("Interrupt %d empfangen! Latenz: %lld us\n", ++i, diff_ns / 1000);
+        evl_printf("Interrupt %d received! Latency: %lld us\n", ++i, diff_ns / 1000);
     }
     return 0;
 }
