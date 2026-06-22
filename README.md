@@ -6,6 +6,9 @@ This archive contains the source code and build files for the updated real-time 
 
 ```text
 .
+├── frequency_test/
+│   ├── gpio_toggle.c     # Frequency test to get maximum frequency, which PI is reachable to give out on GPIO
+│   └── Makefile          # Compiles the hello_world binary
 ├── hello_world/
 │   ├── helloworld.c      # Minimal real-time thread attachment test
 │   └── Makefile          # Compiles the hello_world binary
