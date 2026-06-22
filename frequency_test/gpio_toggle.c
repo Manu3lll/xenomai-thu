@@ -7,15 +7,12 @@
 #include <stdint.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include <sys/mman.h>
 #include <signal.h>
 #include <errno.h>
 #include <string.h>
 #include <evl/thread.h>
 #include <evl/clock.h>
 #include <evl/timer.h>
-#include <pthread.h>
-#include <sched.h>
 
 #define GPIO_PIN 17
 #define GPIO_BASE 0xFE200000
@@ -142,7 +139,7 @@ timer_fd = evl_new_timer(EVL_CLOCK_MONOTONIC);
     }
 
     printf("\nTest finished.\n");
-    printf("Successfull cycles: %u\n", loops);
+    printf("Successful cycles: %u\n", loops);
     printf("Missede Deadlines (Overruns): %u\n", overruns);
 
     gpio_write(GPIO_PIN, 0);
