@@ -121,8 +121,8 @@ timer_fd = evl_new_timer(EVL_CLOCK_MONOTONIC);
         return 1;
     }
 
-    printf("Periodischer Timer gestartet (%d ns).\n", PERIOD_NS);
-    printf("Mit STRG+C beenden.\n");
+    printf("Periodic Timer started (%d ns).\n", PERIOD_NS);
+    printf("CTRL+C to stop.\n");
 
     int toggle_state = 0;
     uint32_t overruns = 0;
