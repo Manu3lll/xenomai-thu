@@ -21,7 +21,7 @@
 #define GPIO_BASE 0xFE200000
 #define GPIO_LEN  0xB4
 
-#define PERIOD_NS 15000
+#define HALF_PERIOD_NS 15000
 
 volatile uint32_t *gpio;
 volatile int running = 1;
@@ -113,7 +113,7 @@ timer_fd = evl_new_timer(EVL_CLOCK_MONOTONIC);
     value.it_value.tv_nsec = now.tv_nsec;
 
     value.it_interval.tv_sec = 0;
-    value.it_interval.tv_nsec = PERIOD_NS;
+    value.it_interval.tv_nsec = HALF_PERIOD_NS;
 
     ret = evl_set_timer(timer_fd, &value, NULL);
     if (ret < 0) {
@@ -121,7 +121,7 @@ timer_fd = evl_new_timer(EVL_CLOCK_MONOTONIC);
         return 1;
     }
 
-    printf("Periodic Timer started (%d ns).\n", PERIOD_NS);
+    printf("Periodic Timer started (%d ns).\n", HALF_PERIOD_NS*2);
     printf("CTRL+C to stop.\n");
 
     int toggle_state = 0;
